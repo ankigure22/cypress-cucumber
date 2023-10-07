@@ -1,0 +1,24 @@
+{
+  "name": "cypress-cucumber",
+  "version": "1.0.0",
+  "description": "Cypress-cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "-": "^0.0.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "save-dev": "^0.0.1-security"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "devDependencies": {
+    "cypress": "^13.3.0",
+    "cypress-multi-reporters": "^1.6.3",
+    "mocha-junit-reporter": "^2.2.1"
+  }
+}
