@@ -4,9 +4,13 @@
   "description": "Cypress-cucumber",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run"
+    "test": "npx cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:chrome": "cypress run --browser chrome",
+    "cypress:edge": "cypress run --browser edge --headless"
   },
-  "author": "",
+  "author": "Ankit",
   "license": "ISC",
   "dependencies": {
     "-": "^0.0.1",
@@ -14,11 +18,22 @@
     "save-dev": "^0.0.1-security"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
+    "step_definitions": "cypress/e2e/cucumber/step_defs",
+    "nonGlobalStepDefinitions": false
   },
   "devDependencies": {
     "cypress": "^13.3.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-multi-reporters": "^1.6.3",
     "mocha-junit-reporter": "^2.2.1"
-  }
+  },
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Cypress",
+      "program": "${workspaceFolder}/node_modules/cypress/bin/cypress",
+      "args": ["open"]
+    }
+  ]
 }
